@@ -1,0 +1,274 @@
+programa
+{
+  funcao inicio()
+  {
+    inteiro opcao_menu = 0
+    inteiro acertos = 0
+    inteiro erros = 0
+    inteiro pontuacao_final = 0
+    cadeia resposta_usuario = ""
+    cadeia nome_usuario = "" 
+    logico quiz_ativo = verdadeiro
+
+    enquanto(quiz_ativo)
+    {
+      escreva("=========================================\n")
+      escreva("              QUIZ DE REDES              \n")
+      escreva("=========================================\n")
+      escreva(" [ 1 ] -> Iniciar Quiz\n")
+      escreva(" [ 2 ] -> Ver Regras\n")
+      escreva(" [ 3 ] -> Sair\n")
+      escreva("=========================================\n")
+      escreva("Sua escolha: ")
+      leia(opcao_menu)
+      limpa()
+
+      escolha(opcao_menu)
+      {
+        caso 1:
+          acertos = 0
+          erros = 0
+          pontuacao_final = 0
+
+          escreva("Digite o seu nome para comecar: ")
+          leia(nome_usuario)
+          limpa()
+
+          escreva("--- O QUIZ VAI COMECAR, ", nome_usuario, "! Boa sorte! ---\n\n")
+
+          escreva("1) Qual protocolo da camada de transporte fornece uma entrega de dados confiavel e orientada a conexao?\n\n")
+          escreva("   [A] UDP\n")
+          escreva("   [B] IP\n")
+          escreva("   [C] TCP\n")
+          escreva("   [D] HTTP\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+          
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "C" ou resposta_usuario == "c")
+          {
+            escreva("\n -> CORRETO! O TCP garante a entrega dos pacotes por meio de confirmacoes (ACK) e controle de fluxo.\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [C]. O TCP e o protocolo orientado a conexao.\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para a proxima pergunta...")
+          leia(resposta_usuario)
+          limpa()
+
+          escreva("2) Quantas camadas possui o modelo de referencia OSI (Open Systems Interconnection)?\n\n")
+          escreva("   [A] 4 camadas\n")
+          escreva("   [B] 5 camadas\n")
+          escreva("   [C] 7 camadas\n")
+          escreva("   [D] 8 camadas\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "C" ou resposta_usuario == "c")
+          {
+            escreva("\n -> CORRETO! O modelo OSI e composto por 7 camadas (Fisica ate a de Aplicacao).\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [C]. O modelo conceitual OSI possui 7 camadas.\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para a proxima pergunta...")
+          leia(resposta_usuario)
+          limpa()
+
+          escreva("3) Qual dispositivo de rede opera predominantemente na Camada 3 (Rede) e e responsavel por encaminhar pacotes entre sub-redes diferentes?\n\n")
+          escreva("   [A] Switch\n")
+          escreva("   [B] Roteador\n")
+          escreva("   [C] Hub\n")
+          escreva("   [D] Repetidor\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "B" ou resposta_usuario == "b")
+          {
+            escreva("\n -> CORRETO! O roteador analisa os enderecos IP para determinar a melhor rota entre redes distintas.\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [B]. Roteadores fazem o encaminhamento na camada de rede.\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para a proxima pergunta...")
+          leia(resposta_usuario)
+          limpa()
+
+          escreva("4) Qual servico e responsavel por traduzir nomes de dominios (como www.google.com) em enderecos IP?\n\n")
+          escreva("   [A] DHCP\n")
+          escreva("   [B] FTP\n")
+          escreva("   [C] DNS\n")
+          escreva("   [D] NAT\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "C" ou resposta_usuario == "c")
+          {
+            escreva("\n -> CORRETO! O DNS funciona como uma lista telefonica da internet, convertendo nomes em IPs.\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [C]. O DNS faz essa resolucao de nomes.\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para a proxima pergunta...")
+          leia(resposta_usuario)
+          limpa()
+
+          escreva("5) Qual e o tamanho em bits de um endereco IPv4 padrao?\n\n")
+          escreva("   [A] 16 bits\n")
+          escreva("   [B] 32 bits\n")
+          escreva("   [C] 64 bits\n")
+          escreva("   [D] 128 bits\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "B" ou resposta_usuario == "b")
+          {
+            escreva("\n -> CORRETO! O IPv4 possui 32 bits dividido em 4 octetos (ex: 192.168.1.1).\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [B]. Enderecos IPv4 usam 32 bits (o IPv6 usa 128).\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para a proxima pergunta...")
+          leia(resposta_usuario)
+          limpa()
+
+          escreva("6) Qual porta padrao e utilizada pelo protocolo HTTP para navegacao web nao segura?\n\n")
+          escreva("   [A] Porta 21\n")
+          escreva("   [B] Porta 80\n")
+          escreva("   [C] Porta 443\n")
+          escreva("   [D] Porta 25\n\n")
+          escreva("Sua resposta: ")
+          leia(resposta_usuario)
+
+          enquanto (resposta_usuario != "A" e resposta_usuario != "a" e
+                    resposta_usuario != "B" e resposta_usuario != "b" e
+                    resposta_usuario != "C" e resposta_usuario != "c" e
+                    resposta_usuario != "D" e resposta_usuario != "d")
+          {
+            escreva("\nResposta invalida! Por favor, escolha apenas A, B, C ou D.\n")
+            escreva("Sua resposta: ")
+            leia(resposta_usuario)
+          }
+
+          se (resposta_usuario == "B" ou resposta_usuario == "b")
+          {
+            escreva("\n -> CORRETO! O HTTP trafega por padrao na porta 80 (enquanto o HTTPS usa a 443).\n\n")
+            acertos = acertos + 1
+          }
+          senao
+          {
+            escreva("\n -> INCORRETO! A resposta certa era a letra [B]. A porta 80 e destinada ao HTTP.\n\n")
+            erros = erros + 1
+          }
+          escreva("Pressione Enter para ver o resultado...")
+          leia(resposta_usuario)
+          limpa()
+
+          pontuacao_final = acertos * 10
+
+          escreva("=========================================\n")
+          escreva("     RESULTADO DO QUIZ DE: ", nome_usuario, "\n")
+          escreva("=========================================\n")
+          escreva(" Total de Acertos: ", acertos, "\n")
+          escreva(" Total de Erros:   ", erros, "\n")
+          escreva(" Pontuacao Final:  ", pontuacao_final, " pontos\n")
+          escreva("=========================================\n\n")
+         
+          escreva("Pressione Enter para voltar ao Menu Principal.")
+          leia(resposta_usuario)
+          limpa()
+          pare
+
+        caso 2:
+          escreva("=========================================\n")
+          escreva("             REGRAS DO QUIZ              \n")
+          escreva("=========================================\n")
+          escreva(" 1. O quiz contem 6 perguntas sobre Redes.\n")
+          escreva(" 2. Use as letras A, B, C ou D.\n")
+          escreva(" 3. Cada acerto soma 10 pontos.\n")
+          escreva(" 4. Nao ha penalidade por errar.\n")
+          escreva("=========================================\n\n")
+          escreva("Pressione Enter para voltar ao Menu Principal.")
+          leia(resposta_usuario)
+          limpa()
+          pare
+
+        caso 3:
+          escreva("Obrigado por jogar! Encerrando...\n")
+          quiz_ativo = falso
+          pare
+
+        caso contrario:
+          escreva(" Opcao Invalida! Digite 1, 2 ou 3.\n\n")
+          escreva("Pressione Enter para continuar.")
+          leia(resposta_usuario)
+          limpa()
+          pare
+      }
+    }
+  }
+}
